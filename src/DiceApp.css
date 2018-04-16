@@ -1,0 +1,26 @@
+.die-image-1,
+.die-image-2,
+.rollBtn {
+    float: left;
+}
+
+.roll-btn {
+    height: 150px;
+    width: 150px;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+
+.app-score {
+    width: 100%;
+}
+
+.die-1-num,
+.die-2-num,
+.current-total,
+.running-total {
+    float: left;
+    width: 100%;
+}

@@ -23,7 +23,7 @@ class DiceApp extends Component {
     handleClickRoll(event) {
         const randomNum1 = Math.ceil(Math.random() * 6);
         const randomNum2 = Math.ceil(Math.random() * 6);
-        
+
         this.setState((prevState) => {
             return {
                 die1Val: randomNum1,
@@ -31,7 +31,7 @@ class DiceApp extends Component {
                 runningTotal: prevState.runningTotal + randomNum1 + randomNum2
             };
         });
-        
+
     }
     renderDie(dieNum, dieVal) {
         //const randomNum = Math.ceil(Math.random() * 6);
@@ -56,18 +56,36 @@ class DiceApp extends Component {
             </div>
         )
     }
+    renderRollBtn() {
+        return (
+            <button className="roll-btn" onClick={this.handleClickRoll}>
+                Roll
+            </button>
+        )
+
+    }
+    renderAppScore() {
+        var doubleClass = "";
+        if (this.state.die1Val === this.state.die2Val) {
+            doubleClass = " doubleScore";
+        }
+        return (
+            <div className="app-score">
+                <div className={"die-1-num" + doubleClass}>Die 1: {this.state.die1Val}</div>
+                <div className={"die-2-num" + doubleClass}>Die 2: {this.state.die2Val}</div>
+                <div className="current-total">Current Roll Total: {this.state.die1Val + this.state.die2Val}</div>
+                <div className="running-total">Running Total: {this.state.runningTotal}</div>
+            </div>
+        )
+
+    }
     render() {
         return (
             <div className="dice-app">
                 {this.renderDie(1, this.state.die1Val)}
                 {this.renderDie(2, this.state.die2Val)}
-                <button className="roll-btn" onClick={this.handleClickRoll}>Roll</button>
-                <div className="app-score">
-                    <div className="die-1-num">Die 1: {this.state.die1Val}</div>
-                    <div className="die-2-num">Die 2: {this.state.die2Val}</div>
-                    <div className="current-total">Current Roll Total: {this.state.die1Val + this.state.die2Val}</div>
-                    <div className="running-total">Running Total: {this.state.runningTotal}</div>
-                </div>
+                {this.renderRollBtn()}
+                {this.renderAppScore()}
             </div>
         )
     }

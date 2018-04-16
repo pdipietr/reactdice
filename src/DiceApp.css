@@ -1,12 +1,12 @@
 .die-image-1,
 .die-image-2,
-.rollBtn {
+.roll-btn {
     float: left;
+    height: 150px;
+    width: 150px;
 }
 
 .roll-btn {
-    height: 150px;
-    width: 150px;
     font-size: 36px;
     font-weight: bold;
     background-color: #FF0000;

@@ -34,7 +34,6 @@ class DiceApp extends Component {
 
     }
     renderDie(dieNum, dieVal) {
-        //const randomNum = Math.ceil(Math.random() * 6);
         var dieImgFile;
         if (dieVal === 1) {
             dieImgFile = die1;
@@ -52,7 +51,7 @@ class DiceApp extends Component {
         const divClass = 'die-image-' + dieNum;
         return (
             <div className={divClass}>
-                <img src={dieImgFile} alt="" height="150px" width="150px" />
+                <img src={dieImgFile} alt="" />
             </div>
         )
     }
